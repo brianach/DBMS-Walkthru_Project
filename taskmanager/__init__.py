@@ -12,6 +12,7 @@ if os.environ.get("DEVELOPMENT") == "True":
     app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 else:
     app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
+    uri = "postgres://vsvqtuwq:nCm4wnchfGliFFtyrU8itqIeNhOl0v7e@lucky.db.elephantsql.com/vsvqtuwq"
     if uri.startswith("postgres://"):
         uri = uri.replace("postgres://", "postgresql://", 1)
     # remove ', 1' from just inisde closing bracket
